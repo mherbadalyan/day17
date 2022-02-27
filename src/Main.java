@@ -173,17 +173,10 @@ public class Main {
         return num1 > num2 ? num1 : num2;
     }
     private static int max(int num1, int num2, int num3) {
-        return num1 > num2 ? (num1 > num3 ? num1 : num3) : (num2 > num3 ? num2 : num3);
+        return max(max(num1,num2),num3);
     }
     private static int max(int num1, int num2, int num3, int num4) {
-        int[] array = {num1, num2, num3, num4};
-        int max = array[0];
-        for (int i = 1; i < 4; i++) {
-            if (max < array[i]) {
-                max = array[i];
-            }
-        }
-        return max;
+        return max(max(max(num1,num2),num3),num4);
     }
 
     /**
